@@ -1,5 +1,12 @@
 .register {
-    height: 500px;
+    height: 520px;
     width: 380px;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
+}
+
+.register-page {
+    background-image: url('../../images/login.webp');
+    height: 100vh;
+    background-size: cover;
 }

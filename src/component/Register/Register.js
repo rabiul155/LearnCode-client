@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
-        <div className=' d-flex justify-content-center align-items-center'>
-            <form className='register pt-3 ps-4 pe-4 mt-3'>
+        <div className=' d-flex justify-content-center  register-page'>
+            <form className='register pt-3 ps-4 pe-4 mt-5'>
 
                 <h2 className=' text-center'>Register</h2>
                 <hr />

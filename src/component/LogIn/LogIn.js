@@ -5,21 +5,20 @@ import { Link } from 'react-router-dom';
 
 const LogIn = () => {
     return (
-        <div className=' d-flex justify-content-center align-items-center '>
-            <form className='log-in pt-3 ps-4 pe-4 mt-3'>
-
-                <h2 className=' text-center'>LogIn</h2>
+        <div className=' d-flex justify-content-center  login-page'>
+            <form className='log-in pt-3 ps-4 pe-4 mt-5'>
+                <h2 className=' text-center '>LogIn</h2>
                 <hr />
 
                 <div className="form-outline mb-3">
-                    <label className="form-label " htmlFor="form2Example1">Email address</label>
+                    <label className="form-label" htmlFor="form2Example1">Email address</label>
                     <input name='email' type="email" id="form2Example1" className="form-control search-field" required />
 
                 </div>
 
 
                 <div className="form-outline mb-3">
-                    <label className="form-label " htmlFor="form2Example2">Password</label>
+                    <label className="form-label" htmlFor="form2Example2">Password</label>
                     <input name='password' type="password" id="form2Example2" className="form-control search-field" required />
 
                 </div>
