@@ -17,6 +17,7 @@ const Register = () => {
                     <input name='username' type="text" id="form2Example1" className="form-control search-field" />
                 </div>
 
+
                 <div className="form-outline mb-3">
                     <label className="form-label " htmlFor="form2Example1">Email address</label>
                     <input name='email' type="email" id="form2Example1" className="form-control search-field" />

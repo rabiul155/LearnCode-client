@@ -10,7 +10,7 @@ const Navbar = () => {
                 <div className="container">
                     <Link className="navbar-brand text-white fw-bolder">
                         <img className='nav-logo me-3 mb-2' src={logo} alt="logo" />
-                        LearnBD
+                        LearnCode
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

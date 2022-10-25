@@ -1,9 +1,32 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CourceHeader from '../CourceHeader/CourceHeader';
+import CourceCard from '../CourseCard/CourceCard';
+import './Cources.css'
 
 const Cources = () => {
+    const cources = useLoaderData();
+
     return (
-        <div>
-            <h2>this is cources</h2>
+        <div className=' '>
+            <div className=' row cources-container'>
+                <div className=' col-3'>
+                    {
+                        cources.map(ch => <CourceHeader
+                            key={ch.id}
+                            course={ch}></CourceHeader>)
+                    }
+                </div>
+                <div className=' col-9 '>
+                    <div className=' row'>
+                        {
+                            cources.map(cource => <CourceCard
+                                key={cource.id}
+                                cource={cource}></CourceCard>)
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

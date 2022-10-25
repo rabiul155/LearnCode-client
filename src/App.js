@@ -31,7 +31,9 @@ function App() {
         },
         {
           path: '/cources',
-          element: <Cources></Cources>
+          loader: () => fetch('http://localhost:5000/cources'),
+          element: <Cources></Cources>,
+
         },
         {
           path: '/blog',
