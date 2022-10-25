@@ -1,7 +1,11 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Cources from './component/Cources/Cources';
 import Home from './component/Home/Home';
+import LogIn from './component/LogIn/LogIn';
+import Register from './component/Register/Register';
+import Blog from './component/Blog/Blog';
 import Main from './layout/Main';
 
 
@@ -16,6 +20,22 @@ function App() {
         {
           path: '/',
           element: <Home></Home>
+        },
+        {
+          path: '/login',
+          element: <LogIn></LogIn>
+        },
+        {
+          path: '/register',
+          element: <Register></Register>
+        },
+        {
+          path: '/cources',
+          element: <Cources></Cources>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         }
 
       ]
