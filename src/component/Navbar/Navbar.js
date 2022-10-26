@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 import logo from '../../images/logo.png'
 import './Navbar.css'
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('log Out successfully')
+            })
+            .catch(e => {
+                console.error('log out error', e)
+            })
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-primary">
@@ -31,8 +46,15 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <form className="d-flex pe-3" >
-                            <Link to='/login' className="nav-link me-3 text-white fw-bold" href="#">LogIn</Link>
-                            <Link to='/register' className="nav-link text-white fw-bold" href="#">Register</Link>
+                            {
+                                user?.uid ? <Link onClick={handleLogOut} to='/register' className="nav-link text-white fw-bold" href="#">LogOut</Link>
+                                    :
+                                    <>
+                                        <Link to='/login' className="nav-link me-3 text-white fw-bold" href="#">LogIn</Link>
+                                        <Link to='/register' className="nav-link text-white fw-bold" href="#">Register</Link>
+
+                                    </>
+                            }
                         </form>
                     </div>
                 </div>

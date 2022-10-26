@@ -1,18 +1,61 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
+import toast from 'react-hot-toast';
 
 const LogIn = () => {
+
+    const [email, setEmail] = useState('');
+
+    const navigate = useNavigate();
+
+    const { logIn, resetPassword } = useContext(AuthContext);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        logIn(email, password)
+            .then(result => {
+                toast.success('log in successfully')
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                navigate('/');
+            })
+            .catch(error => {
+                console.error('login error', error);
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+            })
+    }
+
+    const handleEmailField = (event) => {
+        const userEmail = event.target.value;
+        console.log(userEmail);
+        setEmail(userEmail);
+    }
+
+    const handleForgetPassword = () => {
+        resetPassword(email)
+            .then(() => {
+                toast.success('reset code sent');
+            })
+    }
+
     return (
         <div className=' d-flex justify-content-center  login-page'>
-            <form className='log-in pt-3 ps-4 pe-4 mt-5'>
+            <form onSubmit={handleSubmit} className='log-in pt-3 ps-4 pe-4 mt-5'>
                 <h2 className=' text-center '>LogIn</h2>
                 <hr />
 
                 <div className="form-outline mb-3">
                     <label className="form-label" htmlFor="form2Example1">Email address</label>
-                    <input name='email' type="email" id="form2Example1" className="form-control search-field" required />
+                    <input onBlur={handleEmailField} name='email' type="email" id="form2Example1" className="form-control search-field" required />
 
                 </div>
 
@@ -34,7 +77,7 @@ const LogIn = () => {
 
                     <div className="col">
 
-                        <Link href="#!">Forgot password?</Link>
+                        <Link onClick={handleForgetPassword} >Forgot password?</Link>
                     </div>
                 </div>
 
