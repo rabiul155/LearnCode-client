@@ -4,12 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 import logo from '../../images/logo.png'
 import './Navbar.css'
+import profile from '../../images/profile.png';
+import { FaMoon } from "react-icons/fa";
+import { HiLightBulb, HiOutlineMoon } from "react-icons/hi";
 
 const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, dark, setDark } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -20,6 +23,13 @@ const Navbar = () => {
             .catch(e => {
                 console.error('log out error', e)
             })
+    }
+
+    const themeLight = () => {
+        setDark(false)
+    }
+    const themeDark = () => {
+        setDark(true)
     }
 
     return (
@@ -50,7 +60,19 @@ const Navbar = () => {
                         </ul>
                         <form className="d-flex pe-3" >
                             {
-                                user?.uid ? <Link onClick={handleLogOut} to='/register' className="nav-link text-white fw-bold" href="#">LogOut</Link>
+                                user?.uid ?
+                                    <>
+                                        <Link onClick={handleLogOut} to='/register' className="nav-link text-white fw-bold me-4" href="#">LogOut</Link>
+                                        {
+                                            user?.photoURL ?
+                                                <img className=' pb-1 rounded rounded-circle' data-toggle="tooltip" data-placement="top" title={user?.displayName
+                                                } src={user.photoURL} style={{ width: "30px" }} alt="" />
+                                                :
+                                                <img className='pb-1 rounded rounded-circle' data-toggle="tooltip" data-placement="top" title={user?.displayName
+                                                } src={profile} style={{ width: "30px" }} alt="" />
+                                        }
+                                    </>
+
                                     :
                                     <>
                                         <Link to='/login' className="nav-link me-3 text-white fw-bold" href="#">LogIn</Link>
@@ -58,6 +80,15 @@ const Navbar = () => {
 
                                     </>
                             }
+
+                            <div className='ms-4'>
+                                {
+                                    dark ?
+                                        <HiLightBulb onClick={themeLight} className=' fs-3'></HiLightBulb>
+                                        :
+                                        <HiOutlineMoon onClick={themeDark} className=' fs-3'></HiOutlineMoon>
+                                }
+                            </div>
                         </form>
                     </div>
                 </div>

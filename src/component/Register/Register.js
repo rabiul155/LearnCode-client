@@ -11,7 +11,7 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const { createUser, createUserGoogle, createUserFaceBook } = useContext(AuthContext);
+    const { createUser, createUserGoogle, createUserFaceBook, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,6 +24,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 toast.success('Accout created successfully!!!')
+                handleUpdateProfile(name, photoURL);
                 form.reset();
                 const user = result.user;
                 console.log(user);
@@ -59,6 +60,22 @@ const Register = () => {
             .catch(e => {
                 console.error('facebook sign in error', e)
             })
+    }
+
+    const handleUpdateProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        console.log('function called', profile)
+        updateUserProfile(profile)
+            .then(() => {
+                console.log('successfully updated user');
+            })
+            .catch(error => {
+                console.error('update user error message', error)
+            })
+
     }
 
     return (

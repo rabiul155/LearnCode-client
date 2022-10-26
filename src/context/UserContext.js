@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { createContext } from 'react';
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, FacebookAuthProvider, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { useState } from 'react';
 
@@ -18,6 +18,7 @@ const UserContext = ({ children }) => {
 
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState("null")
+    const [dark, setDark] = useState(true)
 
     //  user created with email and password 
     const createUser = (email, password) => {
@@ -55,6 +56,10 @@ const UserContext = ({ children }) => {
         return sendPasswordResetEmail(auth, email)
     }
 
+    const updateUserProfile = (profile) => {
+        return updateProfile(auth.currentUser, profile)
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
@@ -71,7 +76,7 @@ const UserContext = ({ children }) => {
 
 
 
-    const propsInfo = { user, loading, createUser, createUserGoogle, createUserFaceBook, logOut, logIn, resetPassword };
+    const propsInfo = { dark, setDark, user, loading, createUser, createUserGoogle, createUserFaceBook, logOut, logIn, resetPassword, updateUserProfile };
     return (
         <AuthContext.Provider value={propsInfo}>
             {children}
