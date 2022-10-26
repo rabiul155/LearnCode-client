@@ -11,6 +11,7 @@ import CourceDetails from './component/CourceDetails/CourceDetails';
 import Premium from './component/Premium/Premium';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import Private from './component/Private/Private';
+import FAQ from './component/FAQ/FAQ';
 
 
 
@@ -55,6 +56,10 @@ function App() {
           loader: ({ params }) => fetch(`http://localhost:5000/premium/${params.id}`),
 
           element: <Private><Premium></Premium></Private>
+        },
+        {
+          path: '/faq',
+          element: <FAQ></FAQ>
         }
 
       ]
