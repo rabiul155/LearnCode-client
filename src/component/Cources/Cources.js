@@ -8,26 +8,26 @@ const Cources = () => {
     const cources = useLoaderData();
 
     return (
-        <div className=' '>
-            <div className=' row cources-container'>
-                <div className=' col-3'>
+
+        <div className='row m-0'>
+            <div className=' col-3'>
+                {
+                    cources.map(ch => <CourceHeader
+                        key={ch.id}
+                        course={ch}></CourceHeader>)
+                }
+            </div>
+            <div className=' col-9'>
+                <div className='row'>
                     {
-                        cources.map(ch => <CourceHeader
-                            key={ch.id}
-                            course={ch}></CourceHeader>)
+                        cources.map(cource => <CourceCard
+                            key={cource.id}
+                            cource={cource}></CourceCard>)
                     }
-                </div>
-                <div className=' col-9 '>
-                    <div className=' row'>
-                        {
-                            cources.map(cource => <CourceCard
-                                key={cource.id}
-                                cource={cource}></CourceCard>)
-                        }
-                    </div>
                 </div>
             </div>
         </div>
+
     );
 };
 

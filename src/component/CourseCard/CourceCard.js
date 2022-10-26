@@ -4,7 +4,7 @@ import './CourceCard.css'
 
 const CourceCard = ({ cource }) => {
     console.log(cource)
-    const { name, picture } = cource;
+    const { id, name, picture } = cource;
 
     return (
         <div className='col-3 m-3'>
@@ -12,10 +12,10 @@ const CourceCard = ({ cource }) => {
                 <img src={picture} className="card-img-top bg-black" alt="..." />
                 <div className="card-body p-1">
                     <h5 className="card-title text-black">{name}</h5>
-                    <Link href="#" className="btn btn-primary w-100">Start Learning </Link>
+                    <Link to={`/cource/${id}`} className="btn btn-primary w-100">Start Learning </Link>
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 };
