@@ -11,7 +11,7 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const { createUser, createUserGoogle } = useContext(AuthContext);
+    const { createUser, createUserGoogle, createUserFaceBook } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -45,6 +45,19 @@ const Register = () => {
             })
             .catch(e => {
                 console.error('google sign in error', e)
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        createUserFaceBook()
+            .then(result => {
+                toast.success('log in successfully')
+                const user = result.user;
+                console.log(user);
+                navigate('/');
+            })
+            .catch(e => {
+                console.error('facebook sign in error', e)
             })
     }
 
@@ -88,7 +101,7 @@ const Register = () => {
                     </button>
 
                     <button type="button" className="btn btn-link btn-floating mx-1">
-                        <FaFacebook className=' fs-4'></FaFacebook>
+                        <FaFacebook onClick={handleFacebookSignIn} className=' fs-4'></FaFacebook>
                     </button>
 
                     <button type="button" className="btn btn-link btn-floating mx-1">

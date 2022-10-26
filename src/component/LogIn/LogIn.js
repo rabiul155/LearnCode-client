@@ -13,7 +13,7 @@ const LogIn = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const { logIn, resetPassword } = useContext(AuthContext);
+    const { logIn, resetPassword, createUserGoogle, createUserFaceBook } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,6 +41,34 @@ const LogIn = () => {
         console.log(userEmail);
         setEmail(userEmail);
     }
+
+    const handleGoogleSignIn = () => {
+        createUserGoogle()
+            .then(result => {
+                toast.success('log in successfully')
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .catch(e => {
+                console.error('google sign in error', e)
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        createUserFaceBook()
+            .then(result => {
+                toast.success('log in successfully')
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .catch(e => {
+                console.error('facebook sign in error', e)
+            })
+    }
+
+
 
     const handleForgetPassword = () => {
         resetPassword(email)
@@ -89,11 +117,11 @@ const LogIn = () => {
                     <p className=' m-0 p-0'>Not a member? <Link to='/register'> Register</Link></p>
                     <p className=' m-1 p-0'>or sign up with:</p>
                     <button type="button" className="btn btn-link btn-floating mx-1">
-                        <FaGoogle className=' fs-4'></FaGoogle>
+                        <FaGoogle onClick={handleGoogleSignIn} className=' fs-4'></FaGoogle>
                     </button>
 
                     <button type="button" className="btn btn-link btn-floating mx-1">
-                        <FaFacebook className=' fs-4'></FaFacebook>
+                        <FaFacebook onClick={handleFacebookSignIn} className=' fs-4'></FaFacebook>
                     </button>
 
                     <button type="button" className="btn btn-link btn-floating mx-1">

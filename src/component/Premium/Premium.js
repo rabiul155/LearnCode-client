@@ -37,9 +37,9 @@ const Premium = () => {
                         Method</label>
 
                     <div className=' payment-logo d-flex justify-content-between mb-2'>
-                        <img src={p1} alt="" srcset="" />
-                        <img src={p2} alt="" srcset="" />
-                        <img src={p3} alt="" srcset="" />
+                        <img src={p1} alt="" />
+                        <img src={p2} alt="" />
+                        <img src={p3} alt="" />
                     </div>
                     <button className=' btn btn-primary w-100 mt-3'>Get Access</button>
                 </div>
