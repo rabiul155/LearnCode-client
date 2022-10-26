@@ -10,6 +10,7 @@ import Main from './layout/Main';
 import CourceDetails from './component/CourceDetails/CourceDetails';
 import Premium from './component/Premium/Premium';
 import ErrorPage from './component/ErrorPage/ErrorPage';
+import Private from './component/Private/Private';
 
 
 
@@ -52,7 +53,8 @@ function App() {
         {
           path: '/premium/:id',
           loader: ({ params }) => fetch(`http://localhost:5000/premium/${params.id}`),
-          element: <Premium></Premium>
+
+          element: <Private><Premium></Premium></Private>
         }
 
       ]

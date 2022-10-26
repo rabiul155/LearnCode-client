@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Login.css'
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 import toast from 'react-hot-toast';
 
@@ -10,6 +10,8 @@ const LogIn = () => {
     const [email, setEmail] = useState('');
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const { logIn, resetPassword } = useContext(AuthContext);
 
@@ -25,7 +27,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error('login error', error);

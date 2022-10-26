@@ -20,11 +20,13 @@ const UserContext = ({ children }) => {
 
     //  user created with email and password 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // create user using google 
     const createUserGoogle = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
@@ -37,11 +39,13 @@ const UserContext = ({ children }) => {
 
     // log out using firbase 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth)
     }
 
     //reset password 
     const resetPassword = (email) => {
+        setLoading(true);
         return sendPasswordResetEmail(auth, email)
     }
 
@@ -61,7 +65,7 @@ const UserContext = ({ children }) => {
 
 
 
-    const propsInfo = { user, createUser, createUserGoogle, logOut, logIn, resetPassword };
+    const propsInfo = { user, loading, createUser, createUserGoogle, logOut, logIn, resetPassword };
     return (
         <AuthContext.Provider value={propsInfo}>
             {children}
