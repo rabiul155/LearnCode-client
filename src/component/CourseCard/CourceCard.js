@@ -7,7 +7,7 @@ const CourceCard = ({ cource }) => {
     const { id, name, picture } = cource;
 
     return (
-        <div className='col-3 m-3'>
+        <div className=' col mt-3 d-flex justify-content-center'>
             <div className="card cource-container" >
                 <img src={picture} className="card-img-top bg-black" alt="..." />
                 <div className="card-body p-1 ">

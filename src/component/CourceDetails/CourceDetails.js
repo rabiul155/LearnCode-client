@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Pdf from "react-to-pdf";
 import './CourceDetails.css'
+
+const ref = React.createRef();
 
 const CourceDetails = () => {
     const cource = useLoaderData();
@@ -8,23 +11,26 @@ const CourceDetails = () => {
     const { id, price, name, picture, heading, details } = cource;
     return (
         <div className=' mt-2 position-relative'>
-            <h1 className='text-center'>{name}</h1>
-            <button className=' btn btn-outline-info mt-2 me-5 position-absolute top-0 end-0 ' >Download PDF</button>
+            <h1 className='text-md-center ms-3'>{name}</h1>
+            <Pdf targetRef={ref} filename="code.pdf">
+                {({ toPdf }) => <button onClick={toPdf} className=' btn btn-outline-info mt-1 me-2 me-md-5 position-absolute top-0 end-0 ' >Download PDF</button>
+                }
+            </Pdf>
+
             <hr />
-            <div className=' d-flex justify-content-between align-items-center m-3'>
+            <div ref={ref} className=' d-md-flex justify-content-between align-items-center m-3'>
                 <div>
-                    <img className=' details-image' src={picture} alt="" />
+                    <img className=' details-image m-1 m-md-3' src={picture} alt="" />
                 </div>
-                <div className=' m-3 w-50'>
+                <div className=' m-1 m-md-3 w-75'>
                     <h2>{heading}</h2>
                     <p>{details}</p>
                     <h3>Price : {price}$</h3>
-                    <Link to={`/premium/${id}`} className=' btn btn-outline-info ' > Get Pemium access</Link>
-
-
                 </div>
             </div>
+
             <div className=' d-flex justify-content-center'>
+                <Link to={`/premium/${id}`} className=' btn btn-outline-info ' > Get Pemium access</Link>
 
             </div>
         </div>

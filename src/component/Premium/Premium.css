@@ -11,3 +11,17 @@
     height: 50px;
     width: 80px;
 }
+
+
+@media only screen and (max-width: 576px) {
+
+    .premium {
+
+        height: 520px;
+        width: 300px;
+
+
+
+    }
+
+}

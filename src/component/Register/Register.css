@@ -11,3 +11,15 @@
     background-size: cover;
     min-height: 100vh;
 }
+
+
+@media only screen and (max-width: 576px) {
+
+    .register {
+        height: 600px;
+        width: 300px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+    }
+
+}
