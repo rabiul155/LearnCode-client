@@ -3,17 +3,17 @@ import React from 'react';
 const FAQ = () => {
     return (
         <div className=' d-flex justify-content-center'>
-            <div className=' w-75'>
+            <div className=' w-75 text-info'>
                 <h3 className=' text-center m-3'>Frequently asked Question </h3>
-                <div className="accordion" id="accordionExample">
+                <div className="accordion " id="accordionExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
-                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Details about the basic structure of this website?
                             </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div className="accordion-body">
+                            <div className="accordion-body ">
                                 To build this website we use html for the basic building block.Then we use a css framework bootsrap which is use to design the website.We use a java script component library called React for functionality.we use react router dom for single page application which is provide us a loading free user experience.We use firebase for authentication and a api for loading data from server.
                             </div>
                         </div>

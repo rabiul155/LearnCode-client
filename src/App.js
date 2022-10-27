@@ -37,7 +37,7 @@ function App() {
         },
         {
           path: '/cources',
-          loader: () => fetch('http://localhost:5000/cources'),
+          loader: () => fetch('https://63-assignment-server.vercel.app/cources'),
           element: <Cources></Cources>,
 
         },
@@ -47,13 +47,13 @@ function App() {
         },
         {
           path: '/cource/:id',
-          loader: ({ params }) => fetch(`http://localhost:5000/cource/${params.id}`),
+          loader: ({ params }) => fetch(`https://63-assignment-server.vercel.app/cource/${params.id}`),
           element: <CourceDetails></CourceDetails>
 
         },
         {
           path: '/premium/:id',
-          loader: ({ params }) => fetch(`http://localhost:5000/premium/${params.id}`),
+          loader: ({ params }) => fetch(`https://63-assignment-server.vercel.app/premium/${params.id}`),
 
           element: <Private><Premium></Premium></Private>
         },
@@ -79,3 +79,5 @@ function App() {
 }
 
 export default App;
+
+
