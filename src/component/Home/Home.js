@@ -3,6 +3,7 @@ import './Home.css';
 import banner1 from '../../images/banner4.jpg'
 import banner2 from '../../images/banner6.jpg'
 import banner3 from '../../images/banner1.jpg'
+import Review from '../Review/Review';
 
 
 const Home = () => {
@@ -46,7 +47,11 @@ const Home = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
+            <div className=''>
+                <Review></Review>
+            </div>
         </div>
+
     );
 };
 
