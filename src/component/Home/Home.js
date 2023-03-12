@@ -4,6 +4,9 @@ import banner1 from '../../images/banner4.jpg'
 import banner2 from '../../images/banner6.jpg'
 import banner3 from '../../images/banner1.jpg'
 import Review from '../Review/Review';
+import CounnterSection from '../CounterSection/CounnterSection';
+import CourceCategory from '../CourceCategory/CourceCategory';
+import OurTeacher from '../OurTeacher/OurTeacher';
 
 
 const Home = () => {
@@ -47,9 +50,14 @@ const Home = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
+
             <div className=''>
+                <CourceCategory></CourceCategory>
+                <OurTeacher></OurTeacher>
                 <Review></Review>
+                <CounnterSection></CounnterSection>
             </div>
+
         </div>
 
     );

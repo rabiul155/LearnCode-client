@@ -1,0 +1,14 @@
+.section-bg {
+
+    background-image: linear-gradient(to right, rgb(25, 122, 213), rgb(28, 150, 28));
+    padding-bottom: 20px;
+}
+
+.card-info {
+    background-color: transparent;
+    border: 2px dotted wheat;
+    border-radius: 8px;
+    width: 220px;
+    height: 220px;
+
+}

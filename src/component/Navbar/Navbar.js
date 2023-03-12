@@ -34,8 +34,8 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-primary">
-                <div className="container">
+            <nav className="navbar navbar-expand-lg nav-color">
+                <div className="container-fluid">
                     <Link className="navbar-brand text-white fw-bolder">
                         <img className='nav-logo me-3 mb-2' src={logo} alt="logo" />
                         LearnCode
