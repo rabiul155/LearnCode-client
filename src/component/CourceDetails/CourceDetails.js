@@ -8,7 +8,7 @@ const ref = React.createRef();
 const CourceDetails = () => {
     const cource = useLoaderData();
 
-    const { id, price, name, picture, heading, details } = cource;
+    const { _id, price, name, picture, heading, details } = cource;
     return (
         <div className=' mt-2 position-relative'>
             <h1 className='text-md-center ms-3'>{name}</h1>
@@ -30,7 +30,7 @@ const CourceDetails = () => {
             </div>
 
             <div className=' d-flex justify-content-center'>
-                <Link to={`/premium/${id}`} className=' btn btn-outline-info ' > Get Pemium access</Link>
+                <Link to={`/premium/${_id}`} className=' btn btn-outline-info ' > Get Pemium access</Link>
 
             </div>
         </div>

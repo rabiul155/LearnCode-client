@@ -6,7 +6,7 @@ import img2 from '../../images/img6.PNG'
 const ApplyTeacher = () => {
     return (
         <div className=' m-4  pt-5 row row-cols-1 row-cols-lg-2'>
-            <div className='col mx-auto section-card d-flex  p-4'>
+            <div className='col mx-auto my-2 section-card d-flex  p-4'>
                 <img src={img} alt="" />
                 <div>
                     <h2>Become a teacher</h2>
@@ -14,7 +14,7 @@ const ApplyTeacher = () => {
                     <button className=' btn btn-primary my-3'>Apply As Teacher</button>
                 </div>
             </div>
-            <div className='col mx-auto  section-card d-flex  p-4'>
+            <div className='col mx-auto  my-2 section-card d-flex  p-4'>
                 <img src={img2} alt="" />
                 <div>
                     <h2>Coursector for business</h2>
