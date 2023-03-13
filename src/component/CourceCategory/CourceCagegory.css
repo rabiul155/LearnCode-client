@@ -1,12 +1,22 @@
 .cource {
     height: 320px;
     width: 280px;
-    background-color: #aaeaff;
+    background-color: rgba(9, 9, 107, 0.803);
+    color: white;
+    transition: background-color 200ms;
+}
+
+/* #aaeaff */
+/* rgb(76, 76, 255) */
+
+.cource i {
     color: black;
+    transition: color 200ms;
+
 }
 
 .cource:hover {
-    background-color: rgb(68, 255, 233);
+    background-color: rgb(0, 26, 255);
 }
 
 
@@ -15,4 +25,5 @@
 
 .cource:hover>.icon-section {
     color: rgb(68, 255, 233);
+    transition: color 200ms;
 }

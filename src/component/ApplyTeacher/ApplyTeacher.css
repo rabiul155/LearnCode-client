@@ -1,0 +1,21 @@
+.section-card {
+    max-width: 550px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(0, 0, 69);
+    border-radius: 10px;
+    transition: box-shadow 200ms, background-color 200ms;
+
+
+}
+
+.section-card img {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin-right: 20px;
+}
+
+.section-card:hover {
+    background-color: rgba(4, 4, 56, 0.808);
+    box-shadow: 10px 10px 40px rgb(5, 25, 206);
+}

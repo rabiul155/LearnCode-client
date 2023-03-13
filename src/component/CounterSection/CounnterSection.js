@@ -12,7 +12,7 @@ const CounnterSection = () => {
             <ScrollTrigger onEnter={() => setViewport(true)} onExit={() => setViewport(false)}>
                 {
                     viewport &&
-                    <div className='row gy-4 mx-0'>
+                    <div className='row gy-4 mx-0 mt-4'>
                         <div className="col-12 col-md-6 cols-lg-3 mx-auto card-info d-flex flex-column justify-content-center align-items-center" >
                             <div>
                                 <i class="fa-solid fa-user-tie fs-3 mb-2" ></i>

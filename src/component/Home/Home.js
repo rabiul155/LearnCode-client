@@ -7,6 +7,8 @@ import Review from '../Review/Review';
 import CounnterSection from '../CounterSection/CounnterSection';
 import CourceCategory from '../CourceCategory/CourceCategory';
 import OurTeacher from '../OurTeacher/OurTeacher';
+import OurSevices from '../OurSevices/OurSevices';
+import ApplyTeacher from '../ApplyTeacher/ApplyTeacher';
 
 
 const Home = () => {
@@ -53,7 +55,9 @@ const Home = () => {
 
             <div className=''>
                 <CourceCategory></CourceCategory>
+                <OurSevices></OurSevices>
                 <OurTeacher></OurTeacher>
+                <ApplyTeacher></ApplyTeacher>
                 <Review></Review>
                 <CounnterSection></CounnterSection>
             </div>
