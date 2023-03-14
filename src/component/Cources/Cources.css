@@ -4,12 +4,13 @@
 }
 
 .search-section {
-    height: 250px;
+
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .row-section {
     padding-top: 90px;
+    padding-bottom: 90px;
 }
 
 .course-button {
@@ -23,6 +24,31 @@
 
 .feedback-section {
     background-color: rgba(13, 7, 85, 0.733);
+}
+
+.card-details {
+    width: 22rem;
+    border: 2px solid rgba(13, 7, 85, 0.733);
+    background-color: rgba(26, 14, 159, 0.733);
+}
+
+
+
+.subImg {
+    width: 150px;
+}
+
+.lastImg {
+    width: 166px;
+}
+
+.discount {
+    width: 126px;
+    height: 80px;
+    background-color: rgb(77, 176, 242);
+    border-radius: 5px;
+    left: -10px;
+    bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {
