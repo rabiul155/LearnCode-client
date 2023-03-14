@@ -1,0 +1,32 @@
+.button-color {
+    background-color: orange;
+    padding-top: 12px;
+}
+
+.search-section {
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.row-section {
+    padding-top: 90px;
+}
+
+.course-button {
+    padding: 12px;
+    font-weight: 500;
+    font-size: 20px;
+    width: 100%;
+
+
+}
+
+.feedback-section {
+    background-color: rgba(13, 7, 85, 0.733);
+}
+
+@media only screen and (max-width: 600px) {
+    .feedback-img {
+        width: 320px;
+    }
+}
