@@ -1,0 +1,16 @@
+.subImg {
+    width: 150px;
+}
+
+.lastImg {
+    width: 166px;
+}
+
+.discount {
+    width: 126px;
+    height: 80px;
+    background-color: rgb(77, 176, 242);
+    border-radius: 5px;
+    left: -10px;
+    bottom: 10px;
+}

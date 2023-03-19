@@ -21,14 +21,8 @@ const Home = () => {
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div className="carousel-inner">
+
                     <div className="carousel-item active">
-                        <img src={banner1} className="d-block  banner-img" alt="..." />
-                        <div className="carousel-caption d-md-block info">
-                            <h2>Discover Our Popular cources</h2>
-                            <p>Become a developer from home.Try our most popular cources.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
                         <img src={banner2} className="d-block banner-img" alt="..." />
                         <div className="carousel-caption d-md-block info">
                             <h2>Start learning form today level up your coding skill</h2>
@@ -40,6 +34,13 @@ const Home = () => {
                         <div className="carousel-caption d-md-block info">
                             <h2>Advance your career at your own pace</h2>
                             <p>Build your bridge to better anywhere, at any time, with free courses </p>
+                        </div>
+                    </div>
+                    <div className="carousel-item ">
+                        <img src={banner1} className="d-block  banner-img" alt="..." />
+                        <div className="carousel-caption d-md-block info">
+                            <h2>Discover Our Popular cources</h2>
+                            <p>Become a developer from home.Try our most popular cources.</p>
                         </div>
                     </div>
                 </div>
