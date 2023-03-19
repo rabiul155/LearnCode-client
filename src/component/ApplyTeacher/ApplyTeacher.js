@@ -2,6 +2,7 @@ import React from 'react';
 import './ApplyTeacher.css'
 import img from '../../images/img5.PNG'
 import img2 from '../../images/img6.PNG'
+import { Link } from 'react-router-dom';
 
 const ApplyTeacher = () => {
     return (
@@ -11,7 +12,7 @@ const ApplyTeacher = () => {
                 <div>
                     <h2>Become a teacher</h2>
                     <p>Teach what you love. Coursector gives you the tools to create a course.</p>
-                    <button className=' btn btn-primary my-3'>Apply As Teacher</button>
+                    <Link to='/register'><button className=' btn btn-primary my-3'>Apply As Teacher</button></Link>
                 </div>
             </div>
             <div className='col mx-auto  my-2 section-card d-flex  p-4'>

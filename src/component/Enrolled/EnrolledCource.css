@@ -1,0 +1,55 @@
+.card-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: box-shadow 200ms, background-color 200ms
+}
+
+.card-bg:hover {
+    background-color: rgba(4, 4, 56, 0.808);
+    box-shadow: 10px 10px 30px rgb(5, 25, 206);
+}
+
+.tutorImg {
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+}
+
+.price-position {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.danger-button {
+    color: rgb(255, 16, 16)
+}
+
+.checokout-bg {
+    background-color: rgba(4, 4, 56);
+    transition: box-shadow 200ms, background-color 200ms
+}
+
+.checokout-bg:hover {
+    background-color: rgba(4, 4, 56);
+    box-shadow: 10px 10px 30px rgb(5, 25, 206);
+}
+
+.checkout {
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-image: linear-gradient(to right, rgb(2, 187, 2), blue);
+}
+
+@media only screen and (max-width: 600px) {
+    .price-position {
+        position: static;
+
+    }
+
+    .cource-img {
+        border-radius: 6px;
+    }
+}

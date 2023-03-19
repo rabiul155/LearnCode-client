@@ -5,7 +5,6 @@ import { AuthContext } from '../../context/UserContext';
 import logo from '../../images/logo.png'
 import './Navbar.css'
 import profile from '../../images/profile.png';
-import { FaMoon } from "react-icons/fa";
 import { HiLightBulb, HiOutlineMoon } from "react-icons/hi";
 
 const Navbar = () => {
@@ -55,7 +54,7 @@ const Navbar = () => {
                                 <Link to='/faq' className="nav-link text-white fw-bold" >FAQ</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to='/blog' className="nav-link text-white fw-bold" href="#">Blog</Link>
+                                <Link to='/enrolled' className="nav-link text-white fw-bold" href="#">MyCource</Link>
                             </li>
                         </ul>
                         <form className="d-flex pe-3" >

@@ -5,11 +5,7 @@ import CourceCard from '../CourseCard/CourceCard';
 import Loading from '../Loading/Loading';
 import './Cources.css'
 import img from '../../images/feedback.webp'
-import cardWave1 from '../../images/blue-wave.svg'
-import cardWave2 from '../../images/brown-wave.svg'
-import sub1 from '../../images/dis1.webp'
-import sub2 from '../../images/dis2.webp'
-import sub3 from '../../images/dis3.webp'
+
 import Subscription from '../Subscription/Subscription';
 
 const Cources = () => {

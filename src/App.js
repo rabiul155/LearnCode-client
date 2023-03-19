@@ -12,6 +12,7 @@ import Premium from './component/Premium/Premium';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import Private from './component/Private/Private';
 import FAQ from './component/FAQ/FAQ';
+import Enrolled from './component/Enrolled/Enrolled';
 
 
 
@@ -52,10 +53,8 @@ function App() {
 
         },
         {
-          path: '/premium/:id',
-          loader: ({ params }) => fetch(`http://localhost:5000/premium/${params.id}`),
-
-          element: <Private><Premium></Premium></Private>
+          path: '/enrolled',
+          element: <Private><Enrolled></Enrolled></Private>
         },
         {
           path: '/faq',

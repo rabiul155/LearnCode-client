@@ -1,16 +1,46 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 import Subscription from '../Subscription/Subscription';
 import './CourceDetails.css';
 
 
 
 const CourceDetails = () => {
+    const navigae = useNavigate()
     const cource = useLoaderData();
-    console.log(cource)
+    const { user } = useContext(AuthContext)
+    console.log(user);
 
     const { _id, price, name, tutorImg, tutorName, picture, details, join, video, rating } = cource;
+
+    const handleEnrol = () => {
+        const enrolledCourse = {
+            courceId: _id,
+            courceImg: picture,
+            rating,
+            courceName: name,
+            price: price,
+            tutorName,
+            tutorImg,
+            student: user?.email
+        }
+        fetch('http://localhost:5000/enrolled', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(enrolledCourse)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success("Successfully Enrolled Cource")
+                navigae(`/enrolled`)
+            })
+    }
     return (
         <div className=' mt-2 mx-4'>
             <div className=' position-relative row'>
@@ -44,7 +74,7 @@ const CourceDetails = () => {
                             <div className='my-3 mx-1 '>
                                 <h5 className="card-title text-center">7 days remaining to start</h5>
                             </div>
-                            <Link to={`/premium/${_id}`} className="btn btn-primary py-2 w-100">ENROL NOW </Link>
+                            <Link onClick={handleEnrol} className="btn btn-primary py-2 w-100">ENROL NOW </Link>
                             <h5 className=' py-3'>This cource include</h5>
                             <p>
                                 <i class="fa-solid fa-language ps-1 pe-3 text-primary"></i>
@@ -64,15 +94,7 @@ const CourceDetails = () => {
                             </p>
 
                             <hr />
-                            {/* <div>
-                                <h5>
-                                    Training 5 or more people?
-                                </h5>
-                                <p>
-                                    Get your team access to 3,500+ top courses anytime,Contact our sale
-                                </p>
-                            </div>
-                            <hr /> */}
+
                             <div>
                                 <h5>
                                     Share this course
