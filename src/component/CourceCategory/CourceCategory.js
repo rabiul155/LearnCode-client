@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CourceCagegory.css'
 
 const CourceCategory = () => {
@@ -8,11 +9,13 @@ const CourceCategory = () => {
             <div className=' row row-cols-1 row-cols-sm-2 row-cols-lg-4 gy-4'>
 
                 <div className='col'>
-                    <div className=' p-4 cource  mx-auto rounded-2'>
-                        <i class="fa-solid fa-laptop-code fs-2 icon-section  p-3 bg-body rounded-2"></i>
-                        <h3 className='text-bold mt-2'>Programming</h3>
-                        <p>There are various programming langulage which you need to learn if you want to be a software engineer. Our cource will help you to learn more</p>
-                    </div>
+                    <Link className='text-decoration-none' to='/cources/2'>
+                        <div className=' p-4 cource  mx-auto rounded-2'>
+                            <i class="fa-solid fa-laptop-code fs-2 icon-section  p-3 bg-body rounded-2"></i>
+                            <h3 className='text-bold mt-2'>Programming</h3>
+                            <p>There are various programming langulage which you need to learn if you want to be a software engineer. Our cource will help you to learn more</p>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className='col'>
@@ -24,11 +27,13 @@ const CourceCategory = () => {
                 </div>
 
                 <div className='col'>
-                    <div className=' p-4 cource mx-auto rounded-2'>
-                        <i class="fa-solid fa-code fs-2 icon-section p-3 bg-body rounded-2"></i>
-                        <h3 className=' text-bold  mt-2'>Development</h3>
-                        <p>Learn how to develop your  website. We provide you with a wide range of different development cources that will help you to learn more.</p>
-                    </div>
+                    <Link className='text-decoration-none' to='/cources/1'>
+                        <div className=' p-4 cource mx-auto rounded-2'>
+                            <i class="fa-solid fa-code fs-2 icon-section p-3 bg-body rounded-2"></i>
+                            <h3 className=' text-bold  mt-2'>Development</h3>
+                            <p>Learn how to develop your  website. We provide you with a wide range of different development cources that will help you to learn more.</p>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className='col'>

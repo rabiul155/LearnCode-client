@@ -5,10 +5,8 @@ import Cources from './component/Cources/Cources';
 import Home from './component/Home/Home';
 import LogIn from './component/LogIn/LogIn';
 import Register from './component/Register/Register';
-import Blog from './component/Blog/Blog';
 import Main from './layout/Main';
 import CourceDetails from './component/CourceDetails/CourceDetails';
-import Premium from './component/Premium/Premium';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import Private from './component/Private/Private';
 import FAQ from './component/FAQ/FAQ';
@@ -37,19 +35,20 @@ function App() {
           element: <Register></Register>
         },
         {
-          path: '/cources',
-
+          path: '/cources/:id',
+          loader: ({ params }) => {
+            console.log(params);
+            return fetch(`http://localhost:5000/cources?courseId=${params?.id}`)
+          },
           element: <Cources></Cources>,
 
+
         },
-        {
-          path: '/blog',
-          element: <Blog></Blog>
-        },
+
         {
           path: '/cource/:id',
           loader: ({ params }) => fetch(`http://localhost:5000/cource/${params.id}`),
-          element: <CourceDetails></CourceDetails>
+          element: <Private><CourceDetails></CourceDetails></Private>
 
         },
         {

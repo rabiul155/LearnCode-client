@@ -1,29 +1,16 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-
 import CourceCard from '../CourseCard/CourceCard';
-import Loading from '../Loading/Loading';
 import './Cources.css'
 import img from '../../images/feedback.webp'
-
 import Subscription from '../Subscription/Subscription';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Cources = () => {
 
 
-    const { data: cources = [], isLoading } = useQuery({
-        queryKey: ['cources'],
-        queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/cources?courseId=${1}`)
-            const data = await res.json();
-            return data;
-        }
+    const cources = useLoaderData();
 
-    })
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
 
 
     return (
@@ -47,13 +34,13 @@ const Cources = () => {
             <section className='m-4'>
                 <div className=' row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 gx-3'>
                     <div className='col'>
-                        <button type="button" class="btn course-button  mx-auto  btn-outline-info">Programming</button>
+                        <Link to='/cources/2'><button type="button" class="btn course-button  mx-auto  btn-outline-info">Programming</button></Link>
                     </div>
                     <div className='col'>
                         <button type="button" class="btn course-button  mx-auto  btn-outline-info">UI/UX Design</button>
                     </div>
                     <div className='col'>
-                        <button type="button" class="btn course-button  mx-auto  btn-outline-info">Development</button>
+                        <Link to='/cources/1'><button type="button" class="btn course-button  mx-auto  btn-outline-info">Development</button></Link>
                     </div>
                     <div className='col'>
                         <button type="button" class="btn course-button  mx-auto  btn-outline-info">IT & Software</button>
@@ -82,7 +69,7 @@ const Cources = () => {
             <div className='m-4'>
                 <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-y-2' >
                     {
-                        cources.map(cource => <CourceCard
+                        cources?.map(cource => <CourceCard
                             key={cource.id}
                             cource={cource}></CourceCard>)
                     }

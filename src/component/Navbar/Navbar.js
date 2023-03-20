@@ -48,13 +48,23 @@ const Navbar = () => {
                                 <Link to='/' className="nav-link text-white fw-bold" aria-current="page" href="#">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to='/cources' className="nav-link text-white fw-bold" href="#">Cources</Link>
+                                <div class="dropdown">
+                                    <Link class="nav-link text-white fw-bold " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Course
+                                    </Link>
+
+                                    <ul class="dropdown-menu">
+                                        <li><Link to='/cources/1' class="dropdown-item" >Development</Link></li>
+                                        <li><Link to='/cources/2' class="dropdown-item" >Programming</Link></li>
+                                        <li><Link class="dropdown-item" >UI/UX Design</Link></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li className="nav-item">
                                 <Link to='/faq' className="nav-link text-white fw-bold" >FAQ</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to='/enrolled' className="nav-link text-white fw-bold" href="#">MyCource</Link>
+                                <Link to='/enrolled' className="nav-link text-white fw-bold" href="#">MyCourse</Link>
                             </li>
                         </ul>
                         <form className="d-flex pe-3" >

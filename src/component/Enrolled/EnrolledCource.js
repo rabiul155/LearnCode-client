@@ -41,7 +41,7 @@ const EnrolledCource = ({ cource, refetch }) => {
                                 }
 
                             </p>
-                            <div className=' d-flex align-items-center mb-2'>
+                            <div className=' d-flex align-items-center'>
                                 <img className='tutorImg me-2' src={tutorImg} alt="" />
                                 <h6> {tutorName}</h6>
                             </div>
