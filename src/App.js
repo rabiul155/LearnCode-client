@@ -38,7 +38,7 @@ function App() {
           path: '/cources/:id',
           loader: ({ params }) => {
             console.log(params);
-            return fetch(`http://localhost:5000/cources?courseId=${params?.id}`)
+            return fetch(`https://63-assignment-server.vercel.app/cources?courseId=${params?.id}`)
           },
           element: <Cources></Cources>,
 
@@ -47,7 +47,7 @@ function App() {
 
         {
           path: '/cource/:id',
-          loader: ({ params }) => fetch(`http://localhost:5000/cource/${params.id}`),
+          loader: ({ params }) => fetch(`https://63-assignment-server.vercel.app/cource/${params.id}`),
           element: <Private><CourceDetails></CourceDetails></Private>
 
         },

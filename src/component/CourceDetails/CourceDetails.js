@@ -27,7 +27,7 @@ const CourceDetails = () => {
             tutorImg,
             student: user?.email
         }
-        fetch('http://localhost:5000/enrolled', {
+        fetch('https://63-assignment-server.vercel.app/enrolled', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

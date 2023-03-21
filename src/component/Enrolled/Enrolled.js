@@ -21,7 +21,7 @@ const Enrolled = () => {
     const { data: enrolledCource = [], refetch, isLoading } = useQuery({
         queryKey: ['enrolledCource'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/enrolled?email=${user?.email}`)
+            const res = await fetch(`https://63-assignment-server.vercel.app/enrolled?email=${user?.email}`)
             const data = await res.json()
             return data;
         }

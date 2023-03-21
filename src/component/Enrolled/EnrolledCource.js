@@ -14,7 +14,7 @@ const EnrolledCource = ({ cource, refetch }) => {
     const handleDelete = () => {
         const confirm = window.confirm('Are you sure to delete this cource')
         if (confirm) {
-            fetch(`http://localhost:5000/deleteEnrolled?courceId=${_id}`, {
+            fetch(`https://63-assignment-server.vercel.app/deleteEnrolled?courceId=${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
